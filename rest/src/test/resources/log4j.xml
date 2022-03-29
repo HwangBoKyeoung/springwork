@@ -6,17 +6,17 @@
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+			<param name="ConversionPattern" value="%-5p: %d{HH:mm} %c{2} %M{%L} - %m%n" />
 		</layout>
 	</appender>
 	
 	<!-- Application Loggers -->
 	<logger name="co.micol.prj">
-		<level value="info" />
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
+	<!-- <logger name="org.springframework.core">
 		<level value="info" />
 	</logger>	
 	
@@ -30,11 +30,11 @@
 
 	<logger name="org.springframework.web">
 		<level value="info" />
-	</logger>
+	</logger> -->
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="info" />
+		<priority value="debug" />
 		<appender-ref ref="console" />
 	</root>
 	

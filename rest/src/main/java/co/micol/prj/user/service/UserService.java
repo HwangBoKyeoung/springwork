@@ -3,8 +3,6 @@ package co.micol.prj.user.service;
 import java.util.List;
 import java.util.Map;
 
-import co.micol.prj.user.vo.UserVO;
-
 public interface UserService {
 	public UserVO getUser(UserVO vo);
 	public List<UserVO> getUserList(UserVO vo);

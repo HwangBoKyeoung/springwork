@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- transactionManager 빈 등록 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- @Transactional 애노테이션 스캔 -->
+	<tx:annotation-driven />
+	
+	<!-- Transaction Advice 설정 -->
+	 <tx:advice id="txAdvice" transaction-manager="transactionManager">
+	     <tx:attributes>
+	         <tx:method name="select*" read-only="true" />
+	         <tx:method name="*"/>
+	     </tx:attributes>
+	 </tx:advice>
+		
+	 <!-- Transaction AOP 설정 -->
+	 <aop:config>
+	     <aop:pointcut expression="execution(* co.micol.prj..*ServiceImpl.*(..))" id="txPointCut"/>
+	     <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+	 </aop:config>
+ 
+</beans>

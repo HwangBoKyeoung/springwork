@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import co.micol.prj.user.service.UserService;
-import co.micol.prj.user.vo.UserVO;
+import co.micol.prj.user.service.UserVO;
 
 @RestController
 public class RestfulUserController {

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.micol.prj.user.service.UserService;
-import co.micol.prj.user.vo.UserVO;
+import co.micol.prj.user.service.UserVO;
 
 @Service
 public class UserServiceImpl implements UserService {

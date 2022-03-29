@@ -7,7 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import co.micol.prj.user.vo.UserVO;
+import co.micol.prj.user.service.UserVO;
 
 @Repository
 public class UserDAO {

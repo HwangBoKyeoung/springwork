@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import co.micol.prj.user.service.UserService;
-import co.micol.prj.user.vo.UserVO;
+import co.micol.prj.user.service.UserVO;
 
 @Controller
 public class UserController {
